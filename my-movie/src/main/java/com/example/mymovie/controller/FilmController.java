@@ -30,8 +30,8 @@ public class FilmController {
 
     @GetMapping("/titre/{titre}")
     @ApiOperation(value = "Get film by titre")
-    public ResponseEntity<Film> getFilmByTitre(@PathVariable String titre) {
-        return ResponseEntity.ok((Film) filmService.getFilmsByTitre(titre));
+    public ResponseEntity<List<Film>> getFilmByTitre(@PathVariable String titre) {
+        return ResponseEntity.ok(filmService.getFilmsByTitre(titre));
     }
 
     @GetMapping("/annee/{annee}")
