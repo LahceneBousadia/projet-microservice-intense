@@ -11,7 +11,7 @@ __Outils utilisés :__
   - Discovery Eureka  
   - Swagger 2  
 
-## Microservice "my-movie":  
+## Microservice "my-movie"  
 __Explication__  
 Ce microservice est un projet Spring-Boot développé pour gérer les informations sur les films et les acteurs. Il a été conçu pour fournir une solution pour stocker, afficher et filtrer les informations sur les films et les acteurs.  
 
@@ -24,3 +24,8 @@ __Utilisation__
   - Pour accéder à un film spécifique en fonction de son titre, vous pouvez utiliser l'URL suivante: __'http://localhost:8011/titre/{titre}'__.  
   - Et pour accéder à un film spécifique en fonction de son année de sortie, vous pouvez utiliser l'URL suivante: __'http://localhost:8011/annee/{annee}'__.  
 
+## Microservice "my-finder"  
+__Explication__  
+Le microservice my-finder est une application Spring Boot qui accède à tout ce qui est exposé par my-movie et l'expose à son tour sur un endpoint particulier. Si un ou plusieurs endpoints de my-movie sont indisponibles, my-finder ne plante pas mais affiche simplement un message d'indisponibilité ou une alternative.  
+
+__Utilisation__  
