@@ -11,11 +11,16 @@ __Outils utilisés :__
   - Discovery Eureka  
   - Swagger 2  
 
+## Microservice "my-movie":  
 __Explication__  
 Ce microservice est un projet Spring-Boot développé pour gérer les informations sur les films et les acteurs. Il a été conçu pour fournir une solution pour stocker, afficher et filtrer les informations sur les films et les acteurs.  
 
 __Utilisation__  
-Clonez le projet à partir du référentiel Github.  
-Exécutez la commande mvn clean install pour construire le projet.  
-Exécutez la commande mvn spring-boot:run pour démarrer le microservice.  
-Accédez à Swagger UI à l'adresse http://localhost:8080/swagger-ui.html pour visualiser les API et les essayer.  
+  - Clonez le projet à partir du référentiel Github.  
+  - Exécutez la commande __'mvn clean install'__ pour construire le projet.  
+  - Exécutez la commande __'mvn spring-boot:run'__ pour démarrer le microservice ou sinon executez la classe main __'MyMovieApplication.java'__.  
+  - L'URL pour accéder à la documentation Swagger pour ce microservice serait: __'http://localhost:8011/swagger-ui.html'__.  
+  - Vous devriez également être en mesure d'accéder à la liste des films disponibles en utilisant l'URL suivante: __'http://localhost:8011/films'.__  
+  - Pour accéder à un film spécifique en fonction de son titre, vous pouvez utiliser l'URL suivante: __'http://localhost:8011/titre/{titre}'__.  
+  - Et pour accéder à un film spécifique en fonction de son année de sortie, vous pouvez utiliser l'URL suivante: __'http://localhost:8011/annee/{annee}'__.  
+
