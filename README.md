@@ -11,7 +11,7 @@ __Outils utilisés :__
   - Discovery Eureka  
   - Swagger 2  
 
-## Microservice "my-movie"  
+## Microservice "my-movie" Port: 8011  
 __Explication__  
 Ce microservice est un projet Spring-Boot développé pour gérer les informations sur les films et les acteurs. Il a été conçu pour fournir une solution pour stocker, afficher et filtrer les informations sur les films et les acteurs.  
 
@@ -20,11 +20,18 @@ __Utilisation__
   - Exécutez la commande __'mvn clean install'__ pour construire le projet.  
   - Exécutez la commande __'mvn spring-boot:run'__ pour démarrer le microservice ou sinon executez la classe main __'MyMovieApplication.java'__.  
   - L'URL pour accéder à la documentation Swagger pour ce microservice serait: __'http://localhost:8011/swagger-ui.html'__.  
-  - Vous devriez également être en mesure d'accéder à la liste des films disponibles en utilisant l'URL suivante: __'http://localhost:8011/films'.__  
-  - Pour accéder à un film spécifique en fonction de son titre, vous pouvez utiliser l'URL suivante: __'http://localhost:8011/titre/{titre}'__.  
-  - Et pour accéder à un film spécifique en fonction de son année de sortie, vous pouvez utiliser l'URL suivante: __'http://localhost:8011/annee/{annee}'__.  
+__Films:__  
+  - Pour obtenir la liste de tous les films : __'http://localhost:8011/films'.__  
+  - Pour obtenir un film par titre : __'http://localhost:8011/titre/{titre}'__.  
+  - Pour obtenir la liste des films selon l'année de sortie : __'http://localhost:8011/annee/{annee}'__. 
 
-## Microservice "my-finder"  
+__Acteurs:__  
+  - Pour obtenir la liste de tous les acteurs : __'http://localhost:8011/acteurs'.__  
+  - Pour obtenir un acteur par nom : __'http://localhost:8011/nom/{nom}'__.  
+  - Pour obtenir la liste des acteurs pour un film donné : __'http://localhost:8011/film/{titre}'__.  
+
+
+## Microservice "my-finder" Port: 8080  
 __Explication__  
 Le microservice my-finder est une application Spring Boot qui accède à tout ce qui est exposé par my-movie et l'expose à son tour sur un endpoint particulier. Si un ou plusieurs endpoints de my-movie sont indisponibles, my-finder ne plante pas mais affiche simplement un message d'indisponibilité ou une alternative.  
 
@@ -49,3 +56,17 @@ My-finder est enregistré en tant que client Eureka, ce qui permet à l'applicat
 
 __Dashboard Hystrix__  
 My-finder inclut un dashboard Hystrix qui peut être utilisé pour surveiller la disponibilité et la performance de l'application.  
+
+## Microservice "my-dashboard" Port: 8761  
+Il expose un tableau de bord Eureka pour les microservices qui s'enregistrent avec lui.  
+
+Il est important de noter que ce microservice est l'administrateur de Eureka.  
+
+__Les fonctionnalités principales de ce microservice comprennent :__  
+
+  - Exposition du tableau de bord Eureka
+  - Exposition du dashboard Hystrix du microservice "my-finder"
+  - URL du tableau de bord Eureka
+  - L'URL du tableau de bord Eureka est accessible via l'URL suivante : __'http://localhost:8761/eureka'__  
+  - Le dashboard Hystrix est accessible via l'URL suivante : __'http://localhost:8761/eureka'__  
+  
