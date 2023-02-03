@@ -66,7 +66,6 @@ __Les fonctionnalités principales de ce microservice comprennent :__
 
   - Exposition du tableau de bord Eureka
   - Exposition du dashboard Hystrix du microservice "my-finder"
-  - URL du tableau de bord Eureka
   - L'URL du tableau de bord Eureka est accessible via l'URL suivante : __'http://localhost:8761/eureka'__  
   - Le dashboard Hystrix est accessible via l'URL suivante : __'http://localhost:8761/eureka'__  
   
