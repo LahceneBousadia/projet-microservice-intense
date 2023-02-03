@@ -31,8 +31,8 @@ Le microservice my-finder est une application Spring Boot qui accède à tout ce
 __Endpoints exposés__  
 Ce microservice expose les endpoints suivants :  
 
-/movies : renvoie la liste des films disponibles  
-/movies/{id} : renvoie les détails d'un film spécifique  
+/films : renvoie la liste des films disponibles  
+/films/{id} : renvoie les détails d'un film spécifique  
 /health : renvoie l'état de santé du microservice my-movie  
 
 __Utilisation de Swagger2__  
