@@ -20,6 +20,7 @@ __Utilisation__
   - Exécutez la commande __'mvn clean install'__ pour construire le projet.  
   - Exécutez la commande __'mvn spring-boot:run'__ pour démarrer le microservice ou sinon executez la classe main __'MyMovieApplication.java'__.  
   - L'URL pour accéder à la documentation Swagger pour ce microservice serait: __'http://localhost:8011/swagger-ui.html'__.  
+
 __Films:__  
   - Pour obtenir la liste de tous les films : __'http://localhost:8011/films'.__  
   - Pour obtenir un film par titre : __'http://localhost:8011/titre/{titre}'__.  
