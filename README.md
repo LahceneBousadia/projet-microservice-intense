@@ -28,4 +28,24 @@ __Utilisation__
 __Explication__  
 Le microservice my-finder est une application Spring Boot qui accède à tout ce qui est exposé par my-movie et l'expose à son tour sur un endpoint particulier. Si un ou plusieurs endpoints de my-movie sont indisponibles, my-finder ne plante pas mais affiche simplement un message d'indisponibilité ou une alternative.  
 
-__Utilisation__  
+__Endpoints exposés__  
+Ce microservice expose les endpoints suivants :  
+
+/movies : renvoie la liste des films disponibles  
+/movies/{id} : renvoie les détails d'un film spécifique  
+/health : renvoie l'état de santé du microservice my-movie  
+
+__Utilisation de Swagger2__  
+Swagger2 est utilisé pour décrire les méthodes exposées par ce microservice. Les développeurs peuvent utiliser l'interface Swagger pour tester les fonctionnalités de my-finder.  
+
+__Vérification de l'état de santé__  
+My-finder inclut une méthode pour vérifier l'état de santé de my-movie. Si my-movie est en bonne santé, le statut HTTP 200 OK est renvoyé. Sinon, le statut HTTP 500 Internal Server Error est renvoyé.  
+
+__Endpoint actuator Prometheus__  
+My-finder expose l'endpoint actuator Prometheus qui peut être utilisé pour surveiller les métriques de l'application.  
+
+__Eureka Client__  
+My-finder est enregistré en tant que client Eureka, ce qui permet à l'application de s'inscrire dans un cluster Eureka.  
+
+__Dashboard Hystrix__  
+My-finder inclut un dashboard Hystrix qui peut être utilisé pour surveiller la disponibilité et la performance de l'application.  
